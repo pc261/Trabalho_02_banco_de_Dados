@@ -132,3 +132,28 @@ drop procedure EncontrarAutorMaisAntigo;
 CALL EncontrarAutorMaisAntigo();
 
 
+-- EX 9 
+
+DELIMITER //
+
+-- A cláusula DELIMITER define o delimitador para a definição da stored procedure criada .
+-- Utilizamos "//" para indentificar o final da nossa stored procedure.
+
+CREATE PROCEDURE sp_ListarAutores()
+BEGIN 
+  -- O comando CREATE PROCEDURE "NOME DA PROCEDURE" nos permite criar uma procedure.
+
+  -- O BEGIN incia a estrutura de codigo dentro da stored procedure.
+
+  SELECT Nome, Sobrenome FROM Autor;
+  -- Esta é a parte principal da stored procedure.
+  -- É uma instrução SQL que seleciona os campos "Nome" e "Sobrenome" da tabela "Autor".
+
+END;
+-- END marca o final do código da stored procedure.
+
+//
+
+-- Isso encerra a definição da stored procedure usando o delimitador personalizado "//".
+-- Após a definição da stored procedure, você pode restaurar o delimitador padrão usando "DELIMITER ;".
+
